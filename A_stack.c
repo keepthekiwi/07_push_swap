@@ -6,7 +6,7 @@
 /*   By: skillian <skillian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 14:29:24 by skillian          #+#    #+#             */
-/*   Updated: 2022/03/01 20:39:38 by skillian         ###   ########.fr       */
+/*   Updated: 2022/03/01 20:52:27 by skillian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,18 +22,18 @@ int main(int argc, char **argv)
 	stack_a = NULL;
 	stack_b = NULL;	
 
-	init_stack(&stack_a, argv);				//hier noch rein, if 0 dann exit... (also kein valid argument)
+	init_stack(&stack_a, argv);				// hier noch rein, if 0 dann exit... (also kein valid argument)
 
 	if (is_sorted(stack_a))
-		return (0);							//exit bzw exit schon in is_sorted drin
+		return (0);							// exit bzw exit schon in is_sorted drin
 
 	get_min_and_length(&stack_a);
 	valid_args = data()->counter;
 
 	if (valid_args == 0)					// geht ueberhaut 0??
-		return (0);
-	if (valid_args <= 3)					//data counter woanders wieder geaendert???
-		sort_three(&stack_a);				//hier eit drin, sonst wird <=5 noch getriggert
+		return (0);							// errormassage????
+	if (valid_args <= 3)					// data counter woanders wieder geaendert???
+		sort_three(&stack_a);				// hier eit drin, sonst wird <=5 noch getriggert
 	if (valid_args <= 5)
 		sort_four_and_five(&stack_a, &stack_b);
 	else
