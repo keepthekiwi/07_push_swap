@@ -6,7 +6,7 @@
 /*   By: skillian <skillian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 14:26:45 by skillian          #+#    #+#             */
-/*   Updated: 2022/03/01 17:41:47 by skillian         ###   ########.fr       */
+/*   Updated: 2022/03/01 20:26:54 by skillian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,11 @@ t_data		*data(void);
 void		init_stack(t_element **stack, char **args);
 int			add_back(t_element **list, t_element *new);
 t_element	*new_element(int new);
-t_element	*create_stake_and_first_node(int value);
 void		print_list(t_element *stack);
 
 
 void		push(t_element **stack_1, t_element **stack_2, char *str);
 void		pop(t_element **stack);
-void		top(t_element *stack);
 void		rotate(t_element **stack, char *str);
 void		rev_rotate(t_element **stack, char *str);
 void		swap (t_element **stack, char *str);

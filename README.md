@@ -44,6 +44,7 @@ make
 // BONUS?????
 // arg& aus pdf ausprobieren
 // checker ausprobieren
+//norminette einmal in terminal eingeben!
 // !!!Projektabschluss: was muss ich machen, damit ich besser durchkomme??
 
 

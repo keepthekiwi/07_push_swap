@@ -6,7 +6,7 @@
 /*   By: skillian <skillian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 14:29:24 by skillian          #+#    #+#             */
-/*   Updated: 2022/03/01 17:45:49 by skillian         ###   ########.fr       */
+/*   Updated: 2022/03/01 20:21:59 by skillian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,46 +14,32 @@
 
 int main(int argc, char **argv)
 {
-	(void)	argc;
-
+	(void)		argc;
+	int			valid_args;
 	t_element	*stack_a;
 	t_element	*stack_b;
 
 	stack_a = NULL;
-	stack_b = NULL;				//reciht zum createn von stake_b, da NULL Pointer. Aller was ich hier rein schiebe (von a zu b) ist ja schon ge-malloc-ed und aedere nur pointer
+	stack_b = NULL;	
 
-	// counter_var(0);				//geht das????
-	// position_low_var(0);
+	init_stack(&stack_a, argv);
 
-
-	init_stack(&stack_a, argv);				// **(STEP 1)**
-	// arg_input(&stack_a, argc, argv);
-	// print_list(stack_a);
-	
-	if (is_sorted(stack_a))					// **(STEP 2)**
+	if (is_sorted(stack_a))
 		return (0);							//exit bzw exit schon in is_sorted drin
 
-//**Sorting***
-	// sort_three(&stack_a);				// **(STEP 3)**
-	// sort_four_and_five(&stack_a, &stack_b);	// **(STEP 3)**
+	get_min_and_length(&stack_a);
+	valid_args = data()->counter;
 
-	// big_sort(&stack_a, &stack_b);
-
-	// get_min_and_length(&stack_a);
-	// print_list(stack_a);
-
-
-//**Test Operations**
-	// push(&stack_a, &stack_b, "pb");
-	// swap (&stack_a, "sa");
-	// rotate(&stack_a, "ra");
-	// rev_rotate(&stack_a, "rra");
-
-	indexing(&stack_a);
-	radix(&stack_a, &stack_b);
-
-	// print_list(stack_a);
-	// print_list(stack_b);
-
-	return 0;
+	if (valid_args == 0)					// geht ueberhaut 0??
+		return (0);
+	if (valid_args <= 3)					//data counter woanders wieder geaendert???
+		sort_three(&stack_a);				//hier eit drin, sonst wird <=5 noch getriggert
+	if (valid_args <= 5)
+		sort_four_and_five(&stack_a, &stack_b);
+	else
+	{
+		indexing(&stack_a);
+		radix(&stack_a, &stack_b);
+	}
+	return (0);
 }

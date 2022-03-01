@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   E_sort_five.c                                      :+:      :+:    :+:   */
+/*   F_sort_five.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skillian <skillian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 21:07:57 by skillian          #+#    #+#             */
-/*   Updated: 2022/02/23 23:23:25 by skillian         ###   ########.fr       */
+/*   Updated: 2022/03/01 20:31:02 by skillian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void sort_four_and_five(t_element **stack_a, t_element **stack_b)
 		}
 	}
 	sort_three(stack_a);
-	while(*stack_b)
+	while (*stack_b)
 			push(stack_b, stack_a, "pa");
 	return ;
 }

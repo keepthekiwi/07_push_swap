@@ -6,36 +6,11 @@
 /*   By: skillian <skillian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 14:13:07 by skillian          #+#    #+#             */
-/*   Updated: 2022/02/27 17:26:12 by skillian         ###   ########.fr       */
+/*   Updated: 2022/03/01 20:27:27 by skillian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./push_swap.h"
-
-
-//wo nutze ich diese? brauche an sich nur neue node, da stake schon erstellt
-// typedef struct befuellen / Ein Element erstellen
-t_element	*create_stake_and_first_node(int value)	// t_stack ist neue Node (also Element in Stack) 9:47
-{
-	t_element *new_node;							// new_node Element erstellen (greift oben auf den typedef struct zu)
-
-	new_node = malloc(sizeof(t_element));			// Speicher dafuer freimachen
-	new_node->value = value;						// Zahl der Node/Element
-	new_node->next = NULL;							// erste Node (Tail) zeigt auf NULL
-	return (new_node);
-}
-
-// // Neues Element hinzufuegen (push)
-// void	push(t_element **stack, int value)
-// {
-// 	t_element *new_node;							// New Block erstellen (siehe oben typedef)
-
-// 	new_node = malloc(sizeof(t_element));
-// 	new_node->value = value;
-// 	new_node->next = *stack;						// stakaddresse, also addresse vom naechsten element (also was zuletzt hinzugefuegt wurde)
-// 	*stack = new_node;								// Pointer (Next) auf neue Node setzen
-// }
-
 
 // push vpn stack A to B
 void	push(t_element **stack_1, t_element **stack_2, char *str)
@@ -52,34 +27,6 @@ void	push(t_element **stack_1, t_element **stack_2, char *str)
 		ft_printf("%s\n", str);
 	}
 }
-
-
-
-// // Oberstes Element entfernen (pop)
-// void	pop(t_element **stack)						// element** stake wird initialisiert
-// {
-// 	struct s_element *tmp_ptr;
-
-// 	if(*stack != NULL)
-// 	{
-// 		ft_printf("Element popped: %i\n",(*stack) -> value);
-// 		tmp_ptr = *stack;							// tmp_ptr mit dem Wert(?) vom aktuelen *stack befuellen-> zum Zwischenspeichern///=stack ist das komplette ding/quasi copy =*stack ist der value von stack, =&stack ist die Adresse
-// 		*stack = (*stack) -> next;					// warum klammern wichtig???
-// 		free(tmp_ptr);
-// 	}
-// 	else
-// 		ft_printf("The stack is empty.\n");
-// }
-
-// Oberstes Element (Head) im Stack anzeigen
-void	top(t_element *stack)
-{
-	if(stack != NULL)
-		ft_printf("Element on top: %i\n", stack -> value);
-	else
-		ft_printf("Stack is empty.\n");
-}
-
 
 //wie muss Funktion dazu aussehen?
 void	swap (t_element **stack, char *str)	//wenn ich funktion nutze, gebe ich *stack pointer rein, daher ist es hier dann **	//kann alles in eine Funktion packen
@@ -98,18 +45,6 @@ void	swap (t_element **stack, char *str)	//wenn ich funktion nutze, gebe ich *st
 
 	ft_printf("%s\n", str);
 }
-
-
-void	print_list(t_element *stack)
-{
-	ft_printf("stack:\n");
-	while (stack)
-	{
-		ft_printf("%i\n", stack->value);
-		stack = stack->next;
-	}
-}
-
 
 void	rotate(t_element **stack, char *str)
 {
@@ -138,7 +73,6 @@ t_element *get_last_node (t_element *stack)
 	return (stack);
 }
 
-
 void	rev_rotate(t_element **stack, char *str)
 {
 	t_element *tmp;
@@ -160,7 +94,6 @@ void	rev_rotate(t_element **stack, char *str)
 	ft_printf("%s\n", str);
 }
 
-
 int is_sorted(t_element *stack) // keinen doppel** weil ich stack nicht modifizieren will
 {
 	while (stack->next)
@@ -172,4 +105,3 @@ int is_sorted(t_element *stack) // keinen doppel** weil ich stack nicht modifizi
 	// ft_printf("Stack is sorted\n\n"); // doppel n raus //wieder rein, wenn visualizer weg
 	return (true);
 }
-
