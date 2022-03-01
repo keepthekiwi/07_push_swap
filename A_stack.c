@@ -6,7 +6,7 @@
 /*   By: skillian <skillian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 14:29:24 by skillian          #+#    #+#             */
-/*   Updated: 2022/03/01 20:21:59 by skillian         ###   ########.fr       */
+/*   Updated: 2022/03/01 20:39:38 by skillian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int main(int argc, char **argv)
 	stack_a = NULL;
 	stack_b = NULL;	
 
-	init_stack(&stack_a, argv);
+	init_stack(&stack_a, argv);				//hier noch rein, if 0 dann exit... (also kein valid argument)
 
 	if (is_sorted(stack_a))
 		return (0);							//exit bzw exit schon in is_sorted drin

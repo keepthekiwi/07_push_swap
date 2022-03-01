@@ -6,7 +6,7 @@
 /*   By: skillian <skillian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 18:30:28 by skillian          #+#    #+#             */
-/*   Updated: 2022/03/01 20:25:06 by skillian         ###   ########.fr       */
+/*   Updated: 2022/03/01 20:40:57 by skillian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ void	init_stack(t_element **stack, char **args)
 		just_digit_checker(args[i]);
 		no_letter_checker(args[i]);				// wenn digit checker funktioniert, braucge ich das dann noch?
 
-		if(quatation_arg_checker(args[i]))
+		if (quatation_arg_checker(args[i]))
 		{
 			arr = ft_split(args[i], ' ');
-			while(*arr)
+			while (*arr)
 			{
 				add_back(stack, new_element(atoi(*arr)));
 				arr++;
@@ -38,7 +38,6 @@ void	init_stack(t_element **stack, char **args)
 		i++;
 	}
 }
-
 
 void just_digit_checker(char *str) //hier noch space mit beqhandeln
 {
