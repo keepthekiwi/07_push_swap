@@ -6,7 +6,7 @@
 /*   By: skillian <skillian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 14:13:07 by skillian          #+#    #+#             */
-/*   Updated: 2022/03/01 20:46:04 by skillian         ###   ########.fr       */
+/*   Updated: 2022/03/02 16:50:23 by skillian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	push(t_element **stack_1, t_element **stack_2, char *str)
 	}
 }
 
-void	swap (t_element **stack, char *str)
+void	swap(t_element **stack, char *str)
 {
 	t_element	*tmp;
 
@@ -55,7 +55,7 @@ void	rotate(t_element **stack, char *str)
 	return ;
 }
 
-t_element	*get_last_node (t_element *stack)
+t_element	*get_last_node(t_element *stack)
 {
 	if (stack == NULL)
 		return (NULL);
@@ -66,12 +66,11 @@ t_element	*get_last_node (t_element *stack)
 
 void	rev_rotate(t_element **stack, char *str)
 {
-	t_element *tmp;
-	t_element *last_node;
-	t_element *prev_node;
+	t_element	*tmp;
+	t_element	*last_node;
+	t_element	*prev_node;
 
 	tmp = *stack;
-	
 	while ((*stack)->next)
 	{
 		prev_node = *stack;

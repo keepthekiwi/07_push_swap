@@ -6,7 +6,7 @@
 /*   By: skillian <skillian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 18:30:28 by skillian          #+#    #+#             */
-/*   Updated: 2022/03/01 20:40:57 by skillian         ###   ########.fr       */
+/*   Updated: 2022/03/02 16:49:41 by skillian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,28 +18,26 @@ void	init_stack(t_element **stack, char **args)
 	char	**arr;
 
 	i = 1;
-
 	while (args[i])
 	{
 		just_digit_checker(args[i]);
-		no_letter_checker(args[i]);				// wenn digit checker funktioniert, braucge ich das dann noch?
-
-		if (quatation_arg_checker(args[i]))
+		no_letter_checker(args[i]);							// wenn digit checker funktioniert, braucge ich das dann noch?
+		if (quotation_arg_checker(args[i]))
 		{
 			arr = ft_split(args[i], ' ');
 			while (*arr)
 			{
-				add_back(stack, new_element(atoi(*arr)));
+				add_back(stack, new_element(atoi(*arr)));	//eigene atoi nehmen!!!
 				arr++;
 			}
 		}
 		else
-			add_back(stack, new_element(atoi(args[i])));
+			add_back(stack, new_element(atoi(args[i])));	//eigene atoi nehmen!!!
 		i++;
 	}
 }
 
-void just_digit_checker(char *str) //hier noch space mit beqhandeln
+void	just_digit_checker(char *str)						//hier noch space mit beqhandeln //was jetzt mit vorzeichen???? +-
 {
 	while (*str)
 	{
@@ -50,8 +48,9 @@ void just_digit_checker(char *str) //hier noch space mit beqhandeln
 	exit(ft_printf("Error, not just digits.\n"));
 }
 
-// Neues Element am Ende des Strings hinzufuegen (sonst 5 6 7 -> 7 6 5)
 int	add_back(t_element **list, t_element *new)
+/* add element in the end of a string (5 6 7 -> 7 6 5) /
++ Checker of doubles: Line 67*/
 {
 	t_element	*last;
 
@@ -63,8 +62,7 @@ int	add_back(t_element **list, t_element *new)
 		return (1);
 	}
 	last = *list;
-	//checker ob Element doppelt drin
-	while (last)							
+	while (last)
 	{
 		if (new->value == last->value)
 			return (0);
@@ -72,25 +70,11 @@ int	add_back(t_element **list, t_element *new)
 			break ;
 		last = last->next;
 	}
-	//
 	last->next = new;
 	return (1);
 }
 
-t_element	*new_element(int nbr)
-{
-	t_element	*new;
-
-	new = (t_element *) malloc(sizeof(t_element));
-	if (!new)
-		return (NULL);
-	new->value = nbr;
-	new->index = 0;
-	new->next = NULL;
-	return (new);
-}
-
-void no_letter_checker(char *str)
+void	no_letter_checker(char *str)
 {
 	// if(!str)
 	// 	return (false);
@@ -103,7 +87,7 @@ void no_letter_checker(char *str)
 	return ;
 }
 
-int quatation_arg_checker(char *str)
+int	quotation_arg_checker(char *str)
 {
 	while (*str)
 	{

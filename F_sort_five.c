@@ -6,16 +6,14 @@
 /*   By: skillian <skillian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 21:07:57 by skillian          #+#    #+#             */
-/*   Updated: 2022/03/01 20:31:02 by skillian         ###   ########.fr       */
+/*   Updated: 2022/03/02 16:55:38 by skillian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./push_swap.h"
 
-void sort_four_and_five(t_element **stack_a, t_element **stack_b)
+void	sort_four_and_five(t_element **stack_a, t_element **stack_b)
 {
-	get_min_and_length(stack_a);
-
 	while (data()->counter > 3)
 	{
 		if (data()->pos_low == 1)
@@ -40,6 +38,5 @@ void sort_four_and_five(t_element **stack_a, t_element **stack_b)
 	}
 	sort_three(stack_a);
 	while (*stack_b)
-			push(stack_b, stack_a, "pa");
-	return ;
+		push(stack_b, stack_a, "pa");
 }
