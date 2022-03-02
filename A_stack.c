@@ -6,7 +6,7 @@
 /*   By: skillian <skillian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 14:29:24 by skillian          #+#    #+#             */
-/*   Updated: 2022/03/02 16:49:04 by skillian         ###   ########.fr       */
+/*   Updated: 2022/03/02 17:12:31 by skillian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int	main(int argc, char **argv)
 		return (ft_printf("stack is empty\n"));
 	if (is_sorted(stack_a))
 		return (ft_printf("stack is sorted\n"));
+	indexing(&stack_a);
 	get_min_and_length(&stack_a);
 	valid_args = data()->counter;
 	if (valid_args <= 3)
@@ -33,9 +34,6 @@ int	main(int argc, char **argv)
 	if (valid_args <= 5)
 		sort_four_and_five(&stack_a, &stack_b);
 	else
-	{
-		indexing(&stack_a);
-		radix(&stack_a, &stack_b);
-	}
+		radix(&stack_a, &stack_b, 0);
 	return (0);
 }

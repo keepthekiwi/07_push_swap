@@ -6,7 +6,7 @@
 /*   By: skillian <skillian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 14:13:07 by skillian          #+#    #+#             */
-/*   Updated: 2022/03/02 16:50:23 by skillian         ###   ########.fr       */
+/*   Updated: 2022/03/02 17:05:53 by skillian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ void	push(t_element **stack_1, t_element **stack_2, char *str)
 		*stack_1 = tmp->next;
 		tmp->next = *stack_2;
 		*stack_2 = tmp;
-		// if (ft_strlen(str))
 		ft_printf("%s\n", str);
 	}
 }

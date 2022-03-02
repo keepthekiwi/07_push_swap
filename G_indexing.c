@@ -6,13 +6,13 @@
 /*   By: skillian <skillian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 14:53:42 by skillian          #+#    #+#             */
-/*   Updated: 2022/03/01 20:31:42 by skillian         ###   ########.fr       */
+/*   Updated: 2022/03/02 16:59:20 by skillian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./push_swap.h"
 
-void indexing(t_element **stack)
+void	indexing(t_element **stack)
 {
 	t_element	*tmp;
 	t_element	*to_check;

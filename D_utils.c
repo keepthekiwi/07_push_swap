@@ -6,7 +6,7 @@
 /*   By: skillian <skillian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 20:35:53 by skillian          #+#    #+#             */
-/*   Updated: 2022/03/02 16:47:27 by skillian         ###   ########.fr       */
+/*   Updated: 2022/03/02 17:00:39 by skillian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,12 @@ void	get_min_and_length(t_element **stack)
 	tmp = *stack;
 	counter = 1;
 	position_low = 1;
-	i = (*stack)->value;
+	i = (*stack)->index;
 	while (tmp->next)
 	{
-		if (i > tmp->value)
+		if (i > tmp->index)
 		{
-			i = tmp->value;
+			i = tmp->index;
 			position_low = counter;
 		}
 		counter++;
