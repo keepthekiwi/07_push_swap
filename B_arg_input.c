@@ -6,7 +6,7 @@
 /*   By: skillian <skillian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 18:30:28 by skillian          #+#    #+#             */
-/*   Updated: 2022/03/02 21:55:52 by skillian         ###   ########.fr       */
+/*   Updated: 2022/03/02 22:59:12 by skillian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	just_digit_checker(char *str)
 		if (*str >= '0' && *str <= '9')
 			str++;
 		else
-			exit(ft_printf("Error, not just digits.\n"));
+			exit(error("Error, not just digits.\n"));
 	}
 	if (!*str)
 		return ;
@@ -86,7 +86,7 @@ int	add_back(t_element **list, t_element *new)
 	while (last)
 	{
 		if (new->value == last->value)
-			exit (ft_printf("Error, double number\n"));
+			exit (error("Error, double number\n"));
 		if (!last->next)
 			break ;
 		last = last->next;

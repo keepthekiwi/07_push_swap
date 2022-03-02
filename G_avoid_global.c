@@ -6,7 +6,7 @@
 /*   By: skillian <skillian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 14:53:42 by skillian          #+#    #+#             */
-/*   Updated: 2022/03/02 21:55:16 by skillian         ###   ########.fr       */
+/*   Updated: 2022/03/02 22:57:49 by skillian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,10 @@ t_data	*data(void)
 	static t_data	data;
 
 	return (&data);
+}
+
+int	error (char *str)
+{
+	write(2, str, ft_strlen(str));
+	return (0);
 }

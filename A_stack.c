@@ -6,7 +6,7 @@
 /*   By: skillian <skillian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 14:29:24 by skillian          #+#    #+#             */
-/*   Updated: 2022/03/02 21:57:44 by skillian         ###   ########.fr       */
+/*   Updated: 2022/03/02 22:59:27 by skillian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	main(int argc, char **argv)
 	stack_b = NULL;
 	init_stack(&stack_a, argv);
 	if (!stack_a)
-		return (ft_printf("Stack is empty.\n"));
+		return (error("Stack is empty.\n"));
 	if (is_sorted(stack_a))
 		return (ft_printf("Stack is sorted.\n"));
 	indexing(&stack_a);
