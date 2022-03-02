@@ -6,7 +6,7 @@
 /*   By: skillian <skillian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 14:53:42 by skillian          #+#    #+#             */
-/*   Updated: 2022/03/02 16:59:20 by skillian         ###   ########.fr       */
+/*   Updated: 2022/03/02 20:26:01 by skillian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	indexing(t_element **stack)
 			if (to_check->value > tmp->value)
 				to_check->index++;
 			// if (to_check == check_with)
-				// ft_printf("error, double number");
+				// ft_printf("error, double number\n");
 			tmp = tmp->next;
 		}
 		to_check = to_check->next;

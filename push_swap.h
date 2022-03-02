@@ -6,7 +6,7 @@
 /*   By: skillian <skillian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 14:26:45 by skillian          #+#    #+#             */
-/*   Updated: 2022/03/02 17:24:41 by skillian         ###   ########.fr       */
+/*   Updated: 2022/03/02 21:28:48 by skillian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,11 +49,11 @@ void		rev_rotate(t_element **stack, char *str);
 void		arg_input(t_element **stack, int argc, char **argv);
 t_element	*get_last_node(t_element *stack);
 int			int_checker(char *argv);
-void		no_letter_checker(char *str);
 void		just_digit_checker(char *str);
 int			quotation_arg_checker(char *str);
 int			is_sorted(t_element *stack);
 void		get_min_and_length(t_element **stack);
+int			get_length(t_element *stack);
 
 void		indexing(t_element **stack);
 void		sort_three(t_element **stack);

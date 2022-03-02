@@ -6,7 +6,7 @@
 /*   By: skillian <skillian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 14:29:24 by skillian          #+#    #+#             */
-/*   Updated: 2022/03/02 17:12:31 by skillian         ###   ########.fr       */
+/*   Updated: 2022/03/02 21:24:39 by skillian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int	main(int argc, char **argv)
 	indexing(&stack_a);
 	get_min_and_length(&stack_a);
 	valid_args = data()->counter;
+	// valid_args = get_lenght(stack_a);
 	if (valid_args <= 3)
 		sort_three(&stack_a);
 	if (valid_args <= 5)
