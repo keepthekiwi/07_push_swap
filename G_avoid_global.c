@@ -1,34 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   G_indexing.c                                       :+:      :+:    :+:   */
+/*   G_avoid_global.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skillian <skillian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 14:53:42 by skillian          #+#    #+#             */
-/*   Updated: 2022/03/02 20:26:01 by skillian         ###   ########.fr       */
+/*   Updated: 2022/03/02 21:55:16 by skillian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./push_swap.h"
 
-void	indexing(t_element **stack)
+void	get_min_and_length(t_element **stack)
+/* cool method to avoid global variable */
 {
+	int			i;
+	int			counter;
+	int			position_low;
 	t_element	*tmp;
-	t_element	*to_check;
 
-	to_check = *stack;
-	while (to_check)
+	tmp = *stack;
+	counter = 1;
+	position_low = 1;
+	i = (*stack)->index;
+	while (tmp->next)
 	{
-		tmp = *stack;
-		while (tmp)
+		if (i > tmp->index)
 		{
-			if (to_check->value > tmp->value)
-				to_check->index++;
-			// if (to_check == check_with)
-				// ft_printf("error, double number\n");
-			tmp = tmp->next;
+			i = tmp->index;
+			position_low = counter;
 		}
-		to_check = to_check->next;
+		counter++;
+		tmp = tmp->next;
 	}
+	data()->counter = counter;
+	data()->pos_low = position_low;
+	return ;
+}
+
+t_data	*data(void)
+{
+	static t_data	data;
+
+	return (&data);
 }

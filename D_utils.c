@@ -6,7 +6,7 @@
 /*   By: skillian <skillian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 20:35:53 by skillian          #+#    #+#             */
-/*   Updated: 2022/03/02 21:28:27 by skillian         ###   ########.fr       */
+/*   Updated: 2022/03/02 21:58:39 by skillian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,43 +23,23 @@ int	is_sorted(t_element *stack)
 	return (true);
 }
 
-void	get_min_and_length(t_element **stack)
+void	indexing(t_element **stack)
 {
-	int			i;
-	int			counter;
-	int			position_low;
 	t_element	*tmp;
+	t_element	*to_check;
 
-	tmp = *stack;
-	counter = 1;
-	position_low = 1;
-	i = (*stack)->index;
-
-	while (tmp->next)
+	to_check = *stack;
+	while (to_check)
 	{
-		if (i > tmp->index)
+		tmp = *stack;
+		while (tmp)
 		{
-			i = tmp->index;
-			position_low = counter;
+			if (to_check->value > tmp->value)
+				to_check->index++;
+			tmp = tmp->next;
 		}
-		counter++;
-		tmp = tmp->next;
+		to_check = to_check->next;
 	}
-
-	data()->counter = counter;
-	data()->pos_low = position_low;
-
-	printf("counter: %i\n", counter);
-	printf("position_low: %i\n", position_low);
-
-	return ;
-}
-
-t_data	*data(void)
-{
-	static t_data	data;
-
-	return (&data);
 }
 
 t_element	*new_element(int nbr)
@@ -94,7 +74,7 @@ int	get_min(t_element *stack)
 
 int	get_length(t_element *stack)
 {
-	int len;
+	int	len;
 
 	len = 0;
 	while (stack)

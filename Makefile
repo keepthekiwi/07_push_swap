@@ -6,7 +6,7 @@
 #    By: skillian <skillian@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/12 19:29:48 by skillian          #+#    #+#              #
-#    Updated: 2022/03/02 21:27:04 by skillian         ###   ########.fr        #
+#    Updated: 2022/03/02 21:54:30 by skillian         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ SRC =	A_stack.c \
 		D_utils.c \
 		E_sort_three.c \
 		F_sort_five.c \
-		G_indexing.c \
+		G_avoid_global.c \
 		H_big_sort.c
 
 OBJ = 	$(SRC:.c=.o)
@@ -53,4 +53,4 @@ fclean: clean
 re: fclean all
 
 visual: 
-	python3 pyviz.py `ruby -e "puts (-1..3).to_a.shuffle.join(' ')"`
+	python3 pyviz.py `ruby -e "puts (0..500).to_a.shuffle.join(' ')"`
