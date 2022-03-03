@@ -6,7 +6,7 @@
 /*   By: skillian <skillian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 14:53:42 by skillian          #+#    #+#             */
-/*   Updated: 2022/03/02 23:05:41 by skillian         ###   ########.fr       */
+/*   Updated: 2022/03/03 13:14:02 by skillian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,3 +51,5 @@ int	error(char *str)
 	write(2, str, ft_strlen(str));
 	return (0);
 }
+
+

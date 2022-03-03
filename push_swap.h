@@ -6,7 +6,7 @@
 /*   By: skillian <skillian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 14:26:45 by skillian          #+#    #+#             */
-/*   Updated: 2022/03/02 23:05:51 by skillian         ###   ########.fr       */
+/*   Updated: 2022/03/03 13:23:04 by skillian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ int			is_sorted(t_element *stack);
 void		get_min_and_length(t_element **stack);
 int			get_length(t_element *stack);
 int			error(char *str);
+void		int_min_max_checker(t_element *stack);
 
 void		indexing(t_element **stack);
 void		sort_three(t_element **stack);

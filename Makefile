@@ -6,7 +6,7 @@
 #    By: skillian <skillian@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/12 19:29:48 by skillian          #+#    #+#              #
-#    Updated: 2022/03/02 21:54:30 by skillian         ###   ########.fr        #
+#    Updated: 2022/03/03 12:33:39 by skillian         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,4 +53,4 @@ fclean: clean
 re: fclean all
 
 visual: 
-	python3 pyviz.py `ruby -e "puts (0..500).to_a.shuffle.join(' ')"`
+	python3 pyviz.py `ruby -e "puts (0..100).to_a.shuffle.join(' ')"`

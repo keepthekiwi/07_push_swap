@@ -6,7 +6,7 @@
 /*   By: skillian <skillian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 18:30:28 by skillian          #+#    #+#             */
-/*   Updated: 2022/03/02 22:59:12 by skillian         ###   ########.fr       */
+/*   Updated: 2022/03/03 13:35:06 by skillian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	init_stack(t_element **stack, char **args)
 	while (args[i])
 	{
 		just_digit_checker(args[i]);
+
 		if (quotation_arg_checker(args[i]))
 		{
 			arr = ft_split(args[i], ' ');
@@ -93,4 +94,15 @@ int	add_back(t_element **list, t_element *new)
 	}
 	last->next = new;
 	return (1);
+}
+
+void int_min_max_checker(t_element *stack)
+{
+	while (stack)
+		{
+			if ((stack->value) < INT_MIN || (stack->value) > INT_MAX)
+				(error("Stack is empty.\n"));
+			stack++;
+		}
+	return;
 }
