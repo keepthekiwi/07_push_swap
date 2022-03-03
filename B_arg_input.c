@@ -6,7 +6,7 @@
 /*   By: skillian <skillian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 18:30:28 by skillian          #+#    #+#             */
-/*   Updated: 2022/03/03 13:35:06 by skillian         ###   ########.fr       */
+/*   Updated: 2022/03/03 17:29:08 by skillian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,26 +16,35 @@ void	init_stack(t_element **stack, char **args)
 {
 	int		i;
 	char	**arr;
+	char	**tmp;
 
 	i = 1;
 	while (args[i])
 	{
-		just_digit_checker(args[i]);
-
-		if (quotation_arg_checker(args[i]))
+		
+		arr = ft_split(args[i], ' ');
+		tmp = arr
+		if (!arr);
+			// error idk fo rmalloc error
+		while (*arr)
 		{
-			arr = ft_split(args[i], ' ');
-			while (*arr)
-			{
-				add_back(stack, new_element(ft_atoi(*arr)));
-				arr++;
-			}
+			just_digit_checker(*arr);
+			// check if bigger / smaller than max min int
+			
+			// schrittfolge
+			// first romove + sign
+			// remove leading zeros maybe 0000123 -> 123 | -000123 -> -123
+			// if - strcmp mit min int
+			// if  positive strcmp mit max int
+			// if strcm is negativ strcmP(MAX_INT, str) return false -> number bigger / smaller than int
+			add_back(stack, new_element(ft_atoi(*arr)));
+			arr++;
 		}
-		else
-			add_back(stack, new_element(ft_atoi(args[i])));
+		// free tmp here sonst leaks (da ich arr++ machen und dann andere adresse habe als arr !!! | char ** char * free char **
 		i++;
 	}
 }
+//quotations muss ich nicht beachten
 
 void	just_digit_checker(char *str)
 {
@@ -55,8 +64,6 @@ void	just_digit_checker(char *str)
 		else
 			exit(error("Error, not just digits.\n"));
 	}
-	if (!*str)
-		return ;
 }
 
 int	quotation_arg_checker(char *str)
