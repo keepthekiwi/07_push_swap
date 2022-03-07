@@ -6,7 +6,7 @@
 #    By: skillian <skillian@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/12 19:29:48 by skillian          #+#    #+#              #
-#    Updated: 2022/03/03 12:33:39 by skillian         ###   ########.fr        #
+#    Updated: 2022/03/07 17:30:50 by skillian         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,13 +15,13 @@ NAME = push_swap
 FLAGS = -Wall -Wextra -Werror
 LIBFT = libft/libft.a
 FT_PRINTF = ft_printf/ft_printf.a
-SRC =	A_stack.c \
+SRC =	A_push_swap.c \
 		B_arg_input.c \
 		C_operations.c \
 		D_utils.c \
-		E_sort_three.c \
-		F_sort_five.c \
-		G_avoid_global.c \
+		E_utils_two.c \
+		F_sort_three.c \
+		G_sort_five.c \
 		H_big_sort.c
 
 OBJ = 	$(SRC:.c=.o)

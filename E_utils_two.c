@@ -6,11 +6,17 @@
 /*   By: skillian <skillian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 14:53:42 by skillian          #+#    #+#             */
-/*   Updated: 2022/03/03 13:14:02 by skillian         ###   ########.fr       */
+/*   Updated: 2022/03/07 17:28:12 by skillian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./push_swap.h"
+
+int	error(char *str)
+{
+	write(2, str, ft_strlen(str));
+	return (0);
+}
 
 void	get_min_and_length(t_element **stack)
 /* cool method to avoid global variable */
@@ -45,11 +51,3 @@ t_data	*data(void)
 
 	return (&data);
 }
-
-int	error(char *str)
-{
-	write(2, str, ft_strlen(str));
-	return (0);
-}
-
-

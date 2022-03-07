@@ -6,7 +6,7 @@
 /*   By: skillian <skillian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 18:30:28 by skillian          #+#    #+#             */
-/*   Updated: 2022/03/07 16:37:32 by skillian         ###   ########.fr       */
+/*   Updated: 2022/03/07 17:31:29 by skillian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,22 +21,18 @@ void	init_stack(t_element **stack, char **args)
 	i = 1;
 	while (args[i])
 	{
-		
 		arr = ft_split(args[i], ' ');
+		if (!arr)
+			error("Error.\n");
 		tmp = arr;
-		// if (!arr);
-			// error idk fo rmalloc error
 		while (*arr)
 		{
 			just_digit_checker(*arr);
 			int_min_max_checker(*arr);
-			
-			// first romove + sign
-			// remove leading zeros maybe 0000123 -> 123 | -000123 -> -123
 			add_back(stack, new_element(ft_atoi(*arr)));
 			arr++;
 		}
-		// free tmp here sonst leaks (da ich arr++ machen und dann andere adresse habe als arr !!! | char ** char * free char **
+		free_split(tmp);
 		i++;
 	}
 }
@@ -60,7 +56,6 @@ void	just_digit_checker(char *str)
 			exit(error("Error, not just digits.\n"));
 	}
 }
-
 
 int	add_back(t_element **list, t_element *new)
 /* add element in the end of a string (5 6 7 -> 7 6 5) /
@@ -88,7 +83,6 @@ int	add_back(t_element **list, t_element *new)
 	return (1);
 }
 
-
 int	int_min_max_checker(char *ptr)
 {
 	int					i;
@@ -104,4 +98,34 @@ int	int_min_max_checker(char *ptr)
 	if (num > INT_MAX || num < INT_MIN)
 		exit(error("Error, number to big or to small"));
 	return(0);
+}
+
+void	free_stack(t_element **stack)
+{
+	t_element *tmp;
+
+	if (!*stack)
+		return ;
+	tmp = *stack;
+	while (tmp)
+	{
+		free(tmp);
+		tmp = tmp->next;
+	}
+	stack = 0;
+}
+
+void	free_split(char **arr)
+{
+	int i;
+
+	i = 0;
+	while (arr[i])
+	{
+		free(arr[i]);
+		arr[i] = 0;
+		i++;
+	}
+	free(arr);
+	arr = 0;	
 }
