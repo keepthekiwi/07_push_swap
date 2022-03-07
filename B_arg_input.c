@@ -6,7 +6,7 @@
 /*   By: skillian <skillian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 18:30:28 by skillian          #+#    #+#             */
-/*   Updated: 2022/03/03 17:29:08 by skillian         ###   ########.fr       */
+/*   Updated: 2022/03/07 16:37:32 by skillian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,20 +23,16 @@ void	init_stack(t_element **stack, char **args)
 	{
 		
 		arr = ft_split(args[i], ' ');
-		tmp = arr
-		if (!arr);
+		tmp = arr;
+		// if (!arr);
 			// error idk fo rmalloc error
 		while (*arr)
 		{
 			just_digit_checker(*arr);
-			// check if bigger / smaller than max min int
+			int_min_max_checker(*arr);
 			
-			// schrittfolge
 			// first romove + sign
 			// remove leading zeros maybe 0000123 -> 123 | -000123 -> -123
-			// if - strcmp mit min int
-			// if  positive strcmp mit max int
-			// if strcm is negativ strcmP(MAX_INT, str) return false -> number bigger / smaller than int
 			add_back(stack, new_element(ft_atoi(*arr)));
 			arr++;
 		}
@@ -44,7 +40,6 @@ void	init_stack(t_element **stack, char **args)
 		i++;
 	}
 }
-//quotations muss ich nicht beachten
 
 void	just_digit_checker(char *str)
 {
@@ -66,16 +61,6 @@ void	just_digit_checker(char *str)
 	}
 }
 
-int	quotation_arg_checker(char *str)
-{
-	while (*str)
-	{
-		if (*str == ' ')
-			return (1);
-		str++;
-	}
-	return (0);
-}
 
 int	add_back(t_element **list, t_element *new)
 /* add element in the end of a string (5 6 7 -> 7 6 5) /
@@ -103,13 +88,20 @@ int	add_back(t_element **list, t_element *new)
 	return (1);
 }
 
-void int_min_max_checker(t_element *stack)
+
+int	int_min_max_checker(char *ptr)
 {
-	while (stack)
-		{
-			if ((stack->value) < INT_MIN || (stack->value) > INT_MAX)
-				(error("Stack is empty.\n"));
-			stack++;
-		}
-	return;
+	int					i;
+	long long int		num;
+
+	i = ft_strlen(ptr);
+	if (i > 11)
+		exit(error("Error, number to big or to small\n"));
+	if (i < 10)
+		return (0);
+
+	num = ft_atoi(ptr);
+	if (num > INT_MAX || num < INT_MIN)
+		exit(error("Error, number to big or to small"));
+	return(0);
 }
