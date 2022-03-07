@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   G_avoid_global.c                                   :+:      :+:    :+:   */
+/*   E_utils_two.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skillian <skillian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 14:53:42 by skillian          #+#    #+#             */
-/*   Updated: 2022/03/07 17:28:12 by skillian         ###   ########.fr       */
+/*   Updated: 2022/03/07 17:38:18 by skillian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,30 @@ t_data	*data(void)
 	static t_data	data;
 
 	return (&data);
+}
+
+void	print_list(t_element *stack)
+/* for testing the stacks */
+{
+	ft_printf("stack:\n");
+	while (stack)
+	{
+		ft_printf("%i\n", stack->value);
+		stack = stack->next;
+	}
+}
+
+void	free_stack(t_element **stack)
+{
+	t_element	*tmp;
+
+	if (!*stack)
+		return ;
+	tmp = *stack;
+	while (tmp)
+	{
+		free(tmp);
+		tmp = tmp->next;
+	}
+	stack = 0;
 }

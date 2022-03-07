@@ -6,7 +6,7 @@
 /*   By: skillian <skillian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 14:26:45 by skillian          #+#    #+#             */
-/*   Updated: 2022/03/07 17:33:59 by skillian         ###   ########.fr       */
+/*   Updated: 2022/03/07 17:39:11 by skillian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,13 +56,13 @@ void		get_min_and_length(t_element **stack);
 int			get_length(t_element *stack);
 int			error(char *str);
 int			int_min_max_checker(char *ptr);
+void		free_stack(t_element **stack);
+void		free_split(char **arr);
 
 void		indexing(t_element **stack);
 void		sort_three(t_element **stack);
 void		sort_four_and_five(t_element **stack_a, t_element **stack_b);
 void		big_sort(t_element **stack_a, t_element **stack_b);
 void		radix(t_element **stack_a, t_element **stack_b, int i);
-void		free_stack(t_element **stack);
-void		free_split(char **arr);
 
 #endif

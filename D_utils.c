@@ -6,7 +6,7 @@
 /*   By: skillian <skillian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 20:35:53 by skillian          #+#    #+#             */
-/*   Updated: 2022/03/07 17:25:14 by skillian         ###   ########.fr       */
+/*   Updated: 2022/03/07 17:38:21 by skillian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,14 +83,4 @@ int	get_length(t_element *stack)
 		stack = stack->next;
 	}
 	return (len);
-}
-
-void	print_list(t_element *stack)
-{
-	ft_printf("stack:\n");
-	while (stack)
-	{
-		ft_printf("%i\n", stack->value);
-		stack = stack->next;
-	}
 }

@@ -6,7 +6,7 @@
 /*   By: skillian <skillian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 18:30:28 by skillian          #+#    #+#             */
-/*   Updated: 2022/03/07 17:31:29 by skillian         ###   ########.fr       */
+/*   Updated: 2022/03/07 17:38:12 by skillian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,31 +93,15 @@ int	int_min_max_checker(char *ptr)
 		exit(error("Error, number to big or to small\n"));
 	if (i < 10)
 		return (0);
-
 	num = ft_atoi(ptr);
 	if (num > INT_MAX || num < INT_MIN)
 		exit(error("Error, number to big or to small"));
-	return(0);
-}
-
-void	free_stack(t_element **stack)
-{
-	t_element *tmp;
-
-	if (!*stack)
-		return ;
-	tmp = *stack;
-	while (tmp)
-	{
-		free(tmp);
-		tmp = tmp->next;
-	}
-	stack = 0;
+	return (0);
 }
 
 void	free_split(char **arr)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (arr[i])
@@ -127,5 +111,5 @@ void	free_split(char **arr)
 		i++;
 	}
 	free(arr);
-	arr = 0;	
+	arr = 0;
 }
