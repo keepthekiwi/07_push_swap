@@ -6,7 +6,7 @@
 /*   By: skillian <skillian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 14:26:45 by skillian          #+#    #+#             */
-/*   Updated: 2022/03/08 16:56:36 by skillian         ###   ########.fr       */
+/*   Updated: 2022/03/08 17:44:45 by skillian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ void		free_stack(t_element **stack);
 void		free_split(char **arr);
 
 void		indexing(t_element **stack);
-void		sort_two(t_element **stack);
 void		sort_three(t_element **stack);
 void		sort_four_and_five(t_element **stack_a, t_element **stack_b);
 void		big_sort(t_element **stack_a, t_element **stack_b);
