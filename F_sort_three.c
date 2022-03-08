@@ -1,16 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   E_sort_three.c                                     :+:      :+:    :+:   */
+/*   F_sort_three.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skillian <skillian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 20:23:51 by skillian          #+#    #+#             */
-/*   Updated: 2022/03/02 16:50:45 by skillian         ###   ########.fr       */
+/*   Updated: 2022/03/08 16:58:43 by skillian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./push_swap.h"
+
+void	sort_two(t_element **stack)
+{
+	int	a;
+	int	b;
+
+	a = (*stack)->value;
+	b = (*stack)->next->value;
+	if (is_sorted(*stack))
+		return ;
+	if (a > b)
+		swap(stack, "sa");
+}
 
 void	sort_three(t_element **stack)
 {

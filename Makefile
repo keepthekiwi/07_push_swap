@@ -6,7 +6,7 @@
 #    By: skillian <skillian@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/12 19:29:48 by skillian          #+#    #+#              #
-#    Updated: 2022/03/07 17:30:50 by skillian         ###   ########.fr        #
+#    Updated: 2022/03/08 17:07:48 by skillian         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,8 @@ SRC =	A_push_swap.c \
 		E_utils_two.c \
 		F_sort_three.c \
 		G_sort_five.c \
-		H_big_sort.c
+		H_big_sort.c \
+		I_sort_algo.c
 
 OBJ = 	$(SRC:.c=.o)
 

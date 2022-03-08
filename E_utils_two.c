@@ -6,7 +6,7 @@
 /*   By: skillian <skillian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 14:53:42 by skillian          #+#    #+#             */
-/*   Updated: 2022/03/07 17:38:18 by skillian         ###   ########.fr       */
+/*   Updated: 2022/03/08 15:44:34 by skillian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 int	error(char *str)
 {
-	write(2, str, ft_strlen(str));
-	return (0);
+	write(2, "Error\n", ft_strlen("Error\n"));
+	return (1);
+	(void)str;
 }
 
 void	get_min_and_length(t_element **stack)

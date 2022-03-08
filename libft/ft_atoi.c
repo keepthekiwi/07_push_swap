@@ -6,7 +6,7 @@
 /*   By: skillian <skillian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/21 20:09:36 by skillian          #+#    #+#             */
-/*   Updated: 2021/09/29 22:51:15 by skillian         ###   ########.fr       */
+/*   Updated: 2022/03/08 15:23:39 by skillian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static int	digit(const char c)
 	return (0);
 }
 
-int	ft_atoi(const char *str)
+long	ft_atoi(const char *str)
 /* converts a string to an integer */
 {
 	long long int	n;

@@ -6,7 +6,7 @@
 /*   By: skillian <skillian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 18:30:28 by skillian          #+#    #+#             */
-/*   Updated: 2022/03/07 17:38:12 by skillian         ###   ########.fr       */
+/*   Updated: 2022/03/08 15:45:37 by skillian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	init_stack(t_element **stack, char **args)
 	{
 		arr = ft_split(args[i], ' ');
 		if (!arr)
-			error("Error.\n");
+			error("Error\n");
 		tmp = arr;
 		while (*arr)
 		{
@@ -53,7 +53,7 @@ void	just_digit_checker(char *str)
 		if (*str >= '0' && *str <= '9')
 			str++;
 		else
-			exit(error("Error, not just digits.\n"));
+			exit(error("Error\n"));
 	}
 }
 
@@ -74,7 +74,7 @@ int	add_back(t_element **list, t_element *new)
 	while (last)
 	{
 		if (new->value == last->value)
-			exit (error("Error, double number\n"));
+			exit (error("Error\n"));
 		if (!last->next)
 			break ;
 		last = last->next;
@@ -90,12 +90,12 @@ int	int_min_max_checker(char *ptr)
 
 	i = ft_strlen(ptr);
 	if (i > 11)
-		exit(error("Error, number to big or to small\n"));
+		exit(error("Error\n"));
 	if (i < 10)
 		return (0);
 	num = ft_atoi(ptr);
 	if (num > INT_MAX || num < INT_MIN)
-		exit(error("Error, number to big or to small"));
+		exit(error("Error\n"));
 	return (0);
 }
 
