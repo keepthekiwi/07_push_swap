@@ -6,7 +6,7 @@
 /*   By: skillian <skillian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 14:29:24 by skillian          #+#    #+#             */
-/*   Updated: 2022/03/08 17:06:13 by skillian         ###   ########.fr       */
+/*   Updated: 2022/03/08 17:23:25 by skillian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	main(int argc, char **argv)
 	valid_args = get_length(stack_a);
 	if (valid_args == 2)
 		sort_two(&stack_a);
-	if (valid_args <= 3)
+	if (valid_args == 3)
 		sort_three(&stack_a);
 	if (valid_args == 4 || valid_args == 5)
 		sort_four_and_five(&stack_a, &stack_b);
