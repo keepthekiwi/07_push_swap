@@ -6,7 +6,7 @@
 /*   By: skillian <skillian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 14:29:24 by skillian          #+#    #+#             */
-/*   Updated: 2022/03/08 19:10:18 by skillian         ###   ########.fr       */
+/*   Updated: 2022/03/09 16:37:08 by skillian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,5 @@ int	main(int argc, char **argv)
 	if (valid_args > 5 && !is_sorted(stack_a))
 		radix(&stack_a, &stack_b, 0);
 	free_stack(&stack_a);
-	getchar();
 	return (0);
 }
